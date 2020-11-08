@@ -22,8 +22,10 @@ class SecondPage extends StatelessWidget {
        ),
 
        RaisedButton(
-        //  onPressed: () => Get.off(ThirdPage()),
-        onPressed: (){},
+         onPressed: () => Get.off(ThirdPage(
+          
+         )),
+       
          child: Text('Go to third page and remove this screen from the stack'),
        )
        

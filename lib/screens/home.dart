@@ -8,6 +8,29 @@ import 'secondpage.dart';
 
 class Home extends StatelessWidget {
   final AppController myAppController = Get.put(AppController());
+  _showSnackBar(){
+    Get.snackbar('My Title', 'Hello World', snackPosition: SnackPosition.BOTTOM, backgroundColor:Colors.amber );
+  }
+
+  _showAlertDialog(){
+    Get.defaultDialog(
+      title: 'My Title',
+      content: Text('My Content')
+
+    );
+  }
+  _showBottomSheet(){
+    Get.bottomSheet(
+      Container(
+        child: Padding(
+          padding: EdgeInsets.all(30),
+          child: Center(child: Text('My bottom sheet'),),
+        ),
+        color: Colors.white
+
+      )
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +49,22 @@ class Home extends StatelessWidget {
        RaisedButton(
          onPressed: () => Get.to(SecondPage()),
          child: Text('Go to Second Page'),
+ 
+       ),
+
+         RaisedButton(
+         onPressed: () => _showSnackBar(),
+         child: Text('Show Snack Bar'),
+ 
+       ),
+        RaisedButton(
+         onPressed: () => _showAlertDialog(),
+         child: Text('Show Alert Dialog'),
+ 
+       ),
+         RaisedButton(
+         onPressed: () => _showBottomSheet(),
+         child: Text('Show bottom sheet'),
  
        ),
       ],
